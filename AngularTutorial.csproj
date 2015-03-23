@@ -250,6 +250,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="graph.html" />
     <Content Include="index.html" />
     <Content Include="list.html" />
     <Content Include="Scripts\angular-animate.js" />

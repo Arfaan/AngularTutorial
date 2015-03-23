@@ -3,7 +3,8 @@
         $routeProvider.
             when('/', { controller: ListCtrl, templateUrl: 'list.html' }).
             when('/new', { controller: CreateCtrl, templateUrl: 'details.html' }).
-             when('/edit/:editID', { controller: EditCtrl, templateUrl: 'details.html' }).
+            when('/edit/:editID', { controller: EditCtrl, templateUrl: 'details.html' }).
+            when('/graph', { controller:    GraphCtrl, templateUrl: 'graph.html' }).
             otherwise({ redirectTo: '/' });
     });
 
@@ -31,6 +32,11 @@ var CreateCtrl = function ($scope, $location, Todo) {
             );
 
     }
+
+};
+
+var GraphCtrl = function ($scope, $location, Todo) {
+    debugger;
 
 };
 
@@ -79,7 +85,7 @@ var ListCtrl = function ($scope, $location, Todo) {
    
 
     $scope.sort = function (col) {
-        debugger;
+       
         if ($scope.sort_order == col) {
             $scope.is_desc = !$scope.is_desc
 
