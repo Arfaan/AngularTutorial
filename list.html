@@ -62,7 +62,7 @@
     </form>-->
 
 <br /><br /><br />
-
+<!--<div style="height:300px; overflow:scroll;">-->
     <table class="table  table-condensed table-hover">
         <thead>
         <th>
@@ -84,29 +84,29 @@
             <span ng-show="do_show(false, 'DueDate')"><i class="glyphicon glyphicon-menu-up"></i></span>
         </th>
         <th>
-            
+
             <a href="#/new"><i class="glyphicon glyphicon-plus"></i></a>
-            
-        
+
+
         </th>
         </thead>
         <tbody>
-            <tr ng-repeat="todo in todos"  id="todo_{{todo.Id}}">
+            <tr ng-repeat="todo in todos" id="todo_{{todo.Id}}">
                 <td style="font-weight:bold">{{todo.Text}}</td>
                 <td>{{todo.Priority}}</td>
                 <td>{{todo.DueDate | date:mediumDate}}</td>
                 <td>
-                    
+
                     <a href="#/edit/{{todo.Id}}"><i class="glyphicon glyphicon-edit"></i></a>
                     <a ng-click="delete()"><i class="glyphicon glyphicon-trash"></i></a>
-                
+
                 </td>
                 <td><a href="#/graph"><i class="glyphicon glyphicon glyphicon-signal"></i></a></td>
             </tr>
         </tbody>
     </table>
-
-    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save"></span> Search</button>
+<!--</div>-->
+    <!--<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save"></span> Search</button>-->
 
     <a ng-show="has_more()" ng-click="show_more()">Show More</a>
 
