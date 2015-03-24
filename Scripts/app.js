@@ -8,6 +8,7 @@ var TodoApp = angular.module("TodoApp", ["ngResource", "ngRoute", 'googlechart']
             when('/new', { controller: CreateCtrl, templateUrl: 'details.html' }).
             when('/edit/:editID', { controller: EditCtrl, templateUrl: 'details.html' }).
             when('/test', { controller: TestCtrl, templateUrl: 'test.html' }).
+             when('/graph', { controller: GraphCtrl, templateUrl: 'graph.html' }).
           
             otherwise({ redirectTo: '/' });
     });
