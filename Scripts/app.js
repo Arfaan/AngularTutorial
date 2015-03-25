@@ -232,10 +232,10 @@ var TestCtrl = function ($scope, $location, Todo) {
     chart1.options = {
         "title": "Performance",
         "series": {
-            0: { color: '#004225' },
-            1: { color: 'green' },
-            2: { color: '#C80000' },
-            3: { color: '#E6B800' },
+            0: { color: '#2780e3' },
+            1: { color: '#81b6ef' },
+            2: { color: 'gray' },
+            3: { color: '#c0c0c0' },
             
    
         },
@@ -243,7 +243,7 @@ var TestCtrl = function ($scope, $location, Todo) {
         "fill": 20,
         "displayExactValues": true,
         "vAxis": {
-            "title": "Sales unit",
+            "title": "",
             "gridlines": {
                 "count": 10
             }
