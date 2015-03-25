@@ -16,10 +16,10 @@
                 <li class="active"><a>LNDN(2121) <span class="sr-only">(current)</span></a></li>
                 <li><a>UW Management</a></li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" role="button" aria-expanded="false" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                    <a class="dropdown-toggle" role="button" aria-expanded="false" data-toggle="dropdown">Risk Data<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a>Action</a></li>
-                        <li><a>Another action</a></li>
+                        <li><a>Programme Data</a></li>
+                        <li><a>Sharepoint Data</a></li>
                         <li><a>Something else here</a></li>
                         <li class="divider"></li>
                         <li><a>Separated link</a></li>
@@ -27,6 +27,7 @@
                         <li><a>One more separated link</a></li>
                     </ul>
                 </li>
+                <li><a><div class="container"><i class="glyphicon glyphicon-comment"></i><span class="badge badge-notify">2</span></div></a></li>
             </ul>
             <!--<form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
@@ -37,16 +38,16 @@
 
 
             <form class="navbar-form navbar-left">
-                <div class="input-append">
-                    <input type="text" ng-model="query" class="input-medium search-query" placeholder="Search">
-                    <button ng-click="reset()" type="submit" class="btn"><i class="glyphicon glyphicon-search"></i></button>
-                    <button ng-click="query=''; reset()" ng-disabled="!query" type="submit" class="btn">Reset</button>
-                </div>
+               
 
             </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="input-append">
+                    <input type="text" ng-model="query" class="input-medium search-query" placeholder="Search">
+                    <a ng-click="reset()"  class="btn btn-group-sm"><i class="glyphicon glyphicon-search"></i></a>
+                    <a ng-click="query=''; reset()" ng-disabled="!query" >Reset</a>
+                </div>
+            </form>
         </div>
     </div>
 </nav>
@@ -63,51 +64,51 @@
 
 <br /><br /><br />
 <!--<div style="height:300px; overflow:scroll;">-->
-    <table class="table  table-condensed table-hover">
-        <thead>
-        <th>
-            <a ng-click="sort('Text')">Todo</a>
+    <table class="table  table-condensed table-hover" ng-cloak>
+    <thead>
+    <th>
+        <a ng-click="sort('Text')">Todo</a>
 
-            <span ng-show="do_show(true, 'Text')"><i class="glyphicon glyphicon-menu-down"></i></span>
-            <span ng-show="do_show(false, 'Text')"><i class="glyphicon glyphicon-menu-up"></i></span>
-        </th>
-        <th>
-            <a ng-click="sort('Priority')">Priority</a>
+        <span ng-show="do_show(true, 'Text')"><i class="glyphicon glyphicon-menu-down"></i></span>
+        <span ng-show="do_show(false, 'Text')"><i class="glyphicon glyphicon-menu-up"></i></span>
+    </th>
+    <th>
+        <a ng-click="sort('Priority')">Priority</a>
 
-            <span ng-show="do_show(true, 'Priority')"><i class="glyphicon glyphicon-menu-down"></i></span>
-            <span ng-show="do_show(false, 'Priority')"><i class="glyphicon glyphicon-menu-up"></i></span>
-        </th>
-        <th>
-            <a ng-click="sort('DueDate')">Due Date</a>
+        <span ng-show="do_show(true, 'Priority')"><i class="glyphicon glyphicon-menu-down"></i></span>
+        <span ng-show="do_show(false, 'Priority')"><i class="glyphicon glyphicon-menu-up"></i></span>
+    </th>
+    <th>
+        <a ng-click="sort('DueDate')">Due Date</a>
 
-            <span ng-show="do_show(true, 'DueDate')"><i class="glyphicon glyphicon-menu-down"></i></span>
-            <span ng-show="do_show(false, 'DueDate')"><i class="glyphicon glyphicon-menu-up"></i></span>
-        </th>
-        <th>
+        <span ng-show="do_show(true, 'DueDate')"><i class="glyphicon glyphicon-menu-down"></i></span>
+        <span ng-show="do_show(false, 'DueDate')"><i class="glyphicon glyphicon-menu-up"></i></span>
+    </th>
+    <th>
 
-            <a href="#/new"><i class="glyphicon glyphicon-plus"></i></a>
+        <a href="#/new"><i class="glyphicon glyphicon-plus"></i></a>
 
 
-        </th>
-        </thead>
-        <tbody>
-            <tr ng-repeat="todo in todos" id="todo_{{todo.Id}}">
-                <td style="font-weight:bold">{{todo.Text}}</td>
-                <td>{{todo.Priority}}</td>
-                <td>{{todo.DueDate | date:mediumDate}}</td>
-                <td>
+    </th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="todo in todos" id="todo_{{todo.Id}}">
+            <td style="font-weight:bold">{{todo.Text}}</td>
+            <td>{{todo.Priority}}</td>
+            <td>{{todo.DueDate | date:mediumDate}}</td>
+            <td>
 
-                    <a href="#/edit/{{todo.Id}}"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a ng-click="delete()"><i class="glyphicon glyphicon-trash"></i></a>
-                    <a href="#/test"><i class="glyphicon glyphicon glyphicon-stats"></i></a>
-                    <a href="#/graph"><i class="glyphicon glyphicon glyphicon glyphicon-pencil"></i></a>
+                <a href="#/edit/{{todo.Id}}"><i class="glyphicon glyphicon-edit"></i></a>
+                <a ng-click="delete()"><i class="glyphicon glyphicon-trash"></i></a>
+                <a href="#/test"><i class="glyphicon glyphicon glyphicon-stats"></i></a>
+                <a href="#/graph"><i class="glyphicon glyphicon glyphicon glyphicon-pencil"></i></a>
 
-                    
-                </td>
-               
-            </tr>
-        </tbody>
-    </table>
+
+            </td>
+
+        </tr>
+    </tbody>
+</table>
 <!--</div>-->
     <!--<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-save"></span> Search</button>-->
 
